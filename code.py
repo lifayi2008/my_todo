@@ -51,7 +51,7 @@ class Edit(object):
         title = i.get('title', None)
         if not title:
             return render.error('Title is needed!!!')
-        db.update('todo', where='id=$id', title=title, post_date=time.strftime('%Y-%m-%d %X',time.localtime()), vars=locals())
+        db.update('todo', where='id=$id', title=title, post_date=time.strftime('%Y-%m-%d %X'), vars=locals())
         raise web.seeother('/')
 
 class Delete(object):
