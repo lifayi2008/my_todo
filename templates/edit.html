@@ -1,0 +1,12 @@
+$def with(id,oldtitle)
+<html>
+    <body>
+        <h4>Edit</h4>
+        <hr />
+        <form name="input" action="/todo/$id/edit" method="post">
+            Title
+            <input type="text" name="title" value="$oldtitle"/>
+            <input type="submit" value="修改" />
+        </form>
+    </body>
+<html>

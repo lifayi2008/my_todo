@@ -1,0 +1,29 @@
+$def with(todos)
+<html>
+<body>
+    <h2>Task Lists</h2>
+    <hr />
+        $for todo in todos:
+            <ul>
+            <li>
+                $if todo.finished == 0:
+                    $todo.title
+                    &nbsp;
+                    <a href="/todo/$todo.id/finished?status=1">完成</a>
+                $else:
+                    <del>$todo.title</del>
+                    &nbsp;
+                    <a href="/todo/$todo.id/finished?status=0">重做</a>
+                <a href="/todo/$todo.id/edit">编辑</a>
+                <a href="/todo/$todo.id/delete">删除</a>
+            </li>
+            </ul>
+    <hr />
+    <h4>NEW</h4>
+    <form name="input" action="/todo/new" method="post">
+        Title:
+        <input type="text" name="title" />
+        <input type="submit" value='Submit' />
+    </form>
+</body>
+</html>
