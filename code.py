@@ -34,7 +34,7 @@ class New(object):
         title = i.get('title', 0)
         if not title:
             return render.error('Title is needed!!!')
-        db.insert('todo', title=title, post_date=time.strftime('%Y-%m-%d %X',time.localtime()))
+        db.insert('todo', title=title, post_date=time.strftime('%Y-%m-%d %X'))
         raise web.seeother('/')
 
 class Edit(object):
